@@ -17,6 +17,7 @@ export const Search = React.memo(() => {
         Object.fromEntries(new URLSearchParams(location.search));
         let link = Object.fromEntries(new URLSearchParams(location.search));
         const {query, perpage, currentpage} = link;
+        setQuery(query);
         if (query.length > 0) {
             dispatch(fetchOrganisations({query, perPage: perpage, currentPage: currentpage}));
         }
