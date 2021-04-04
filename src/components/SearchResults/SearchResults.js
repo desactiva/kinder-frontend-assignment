@@ -18,20 +18,22 @@ export const SearchResults = ({result}) => {
     
     return (
         <>
-            <h2>{`Organisations matching ´${result.queryMeta}´(${totalOrganisations})`}</h2>
-            <div >
+            <h3>{`Organisations matching ´${result.queryMeta}´`} <span className="total-organisations">{`(${totalOrganisations})`}</span></h3>
+            <>
                 <OrganisationsList/>
+                
                 {
                     currPage >= 2 && fetchStatus === "loading"
                         ? <Spinner size={100}/>
                         : null
                 }
+                
                 {
-                    totalOrganisations > 0 && currPage <= totalPages
+                    totalOrganisations > 0 && currPage <= totalPages && fetchStatus === "completed"
                         ? <LoadMore meta={result.meta} query={result.queryMeta}/>
                         : null
                 }
-            </div>
+            </>
         </>
     );
 };
