@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import organizationsReducer from "../features/organizations/organizationsSlice";
+import organisationsReducer from "../features/organisations/organisationsSlice";
 
 export default configureStore({
     reducer: {
-        organizations: organizationsReducer
+        organisations: organisationsReducer
     },
 })
