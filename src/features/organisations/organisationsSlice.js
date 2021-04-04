@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export const fetchOrganisations = createAsyncThunk(
-    'organisations/fetchOrganisations', async ({query, perPage= 6, currentPage= 1}) => {
+    'organisations/fetchOrganisations', async ({query, perPage = 6, currentPage = 1}) => {
         const response = await axios.post("/search/public?include=cause.images.files,cause.logo.files,cause.categories,cause.hasPassedPreliminary,appeal.organisations.cause",
             {
                 query: query,
