@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
-import {fetchOrganizations, resetState} from "../../features/organizations/organizationsSlice";
+import {fetchOrganisations, resetState} from "../../features/organisations/organisationsSlice";
 
-export const Search = () => {
+export const Search = React.memo(() => {
     const [query, setQuery] = React.useState("");
     const [perPage, setPerPage] = useState("6");
     const [currentPage, setCurrentPage] = useState("1");
@@ -10,7 +10,10 @@ export const Search = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(fetchOrganizations({query, perPage, currentPage}));
+        dispatch(resetState());
+        if (query.length > 0) {
+            dispatch(fetchOrganisations({query, perPage, currentPage}));
+        }
     }
     
     const clearSearch = (e) => {
@@ -21,7 +24,7 @@ export const Search = () => {
     
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="query">Search effective charitable organizations</label>
+            <label htmlFor="query">Search effective charitable organisations</label>
             <input
                 type="text"
                 name="query"
@@ -29,7 +32,7 @@ export const Search = () => {
                 onChange={(e) => setQuery(e.target.value)}
             />
             <button type="button" onClick={clearSearch}>Clear</button>
-            <button type="submit" >Search</button>
+            <button type="submit">Search</button>
         </form>
     );
-};
+});
