@@ -1,0 +1,93 @@
+$active: #f76f97;
+$disable: #dcdcdc;
+$categories: #959595;
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .images-container {
+    position: relative;
+
+    .background {
+      height: 140px;
+      display: block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .logo-container {
+      position: absolute;
+      height: 50px;
+      width: 50px;
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 15px;
+        object-fit: contain;
+        border-radius: 50%;
+        padding: 10px;
+        background: white;
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .container {
+    padding: 10px 25px;
+    display: grid;
+    grid-template-rows: 30px auto auto auto;
+    align-items: center;
+
+    span {
+      color: #f76f97;
+      padding-top: 1em;
+      font-size: 13px;
+    }
+
+    .name, .tagline {
+      margin: 0;
+    }
+
+
+    .categories {
+      margin: .5em 0;
+      color: $categories;
+    }
+  }
+
+  .state-container {
+    display: flex;
+    flex-direction: row;
+
+    .active {
+      background: $active;
+    }
+
+    .disabled {
+      background: $disable;
+    }
+
+    .state {
+      width: 33.3%;
+      height: 3px;
+    }
+
+
+  }
+
+}
+
+
+
