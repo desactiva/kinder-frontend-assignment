@@ -32,18 +32,18 @@ export const Card = ({data}) => {
             <div className="state-container">
                 <div className={
                     !hasPassedPreliminary
-                        ? "state active"
-                        : "state disabled"
+                        ? "state-one active"
+                        : null
                 }/>
                 <div className={
                     hasPassedPreliminary && !publishedAt
-                        ? "state active"
-                        : "state disabled"
+                        ? "state-two active"
+                        : null
                 }/>
                 <div className={
                     hasPassedPreliminary && publishedAt !== null
-                        ? "state active"
-                        : "state disabled"
+                        ? "state-three active"
+                        : null
                 }/>
             
             </div>
