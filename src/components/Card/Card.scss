@@ -56,14 +56,27 @@ $categories: #959595;
       font-size: 13px;
     }
 
-    .name, .tagline {
-      margin: 0;
-    }
-
 
     .categories {
       margin: .5em 0;
       color: $categories;
+    }
+  }
+
+  .not-approved {
+    margin: 25px;
+    background: #fafafa;
+    padding: 15px;
+
+    h5 {
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+
+      span {
+        color: $active;
+        margin: 0 5px;
+      }
     }
   }
 
