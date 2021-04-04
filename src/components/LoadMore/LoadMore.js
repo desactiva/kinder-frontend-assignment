@@ -5,13 +5,16 @@ import {fetchOrganisations} from "../../features/organisations/organisationsSlic
 export const LoadMore = ({meta,query}) => {
     const dispatch = useDispatch();
     const {currentPage} = meta.pagination;
+    const perPage = 6;
+    const {total} = meta.pagination;
+    
     const handleClick = () => {
-        dispatch(fetchOrganisations({query, perPage: 6, currentPage: +currentPage + 1 }))
+        dispatch(fetchOrganisations({query, perPage, currentPage: +currentPage + 1 }))
     }
     
     return (
-        <button onClick={handleClick}>
-            Load More
+        <button className="load-more" onClick={handleClick}>
+            {`Load ${perPage} More of ${total}`}
         </button>
     );
 };
