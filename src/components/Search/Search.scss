@@ -1,0 +1,43 @@
+form {
+  max-width: 966px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding-bottom: 5px;
+}
+
+.input-group {
+  display: flex;
+  align-content: stretch;
+  background: white;
+  border: 1px solid #d5d5d5;
+  padding: 6px 12px;
+}
+
+.input-group > input {
+    flex: 1 0 auto;
+    height: 24px;
+    line-height: 1.42857143;
+    border: 0;
+    border-radius: 0;
+}
+
+
+.input-group-addon {
+  background: #eee;
+  padding: 0.5em 1em;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #7c7c7c;
+}
+
+.total-organisations {
+  color: #acacac;
+  font-weight: 500;
+}
