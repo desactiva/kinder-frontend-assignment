@@ -22,7 +22,7 @@ export const Container = () => {
     
     
     return (
-        <div>
+        <div className="container">
             {content}
         </div>
     );
